@@ -24,7 +24,7 @@ class LoginPage(BasePage):
 
     '''this is use to login to application'''
     def do_login(self):
-        path = r"C://Users//SauravSharma//Pytest//Pytest_pom_dd//TestData.xlsx"
+        path = r"C://Users//SauravSharma//Pytest//Pytest_pom_dd_sauce_demo//TestData.xlsx"
         workbook = xlrd.open_workbook(path)
         sheet=workbook.sheet_by_name("login")
 
@@ -42,7 +42,7 @@ class LoginPage(BasePage):
             # return AddToCartPage(self.driver)
 
     def do_login_with_incorrect_credentials(self):
-        path = r"C://Users//SauravSharma//Pytest//Pytest_pom_dd//TestData.xlsx"
+        path = r"C://Users//SauravSharma//Pytest//Pytest_pom_dd_sauce_demo//TestData.xlsx"
         workbook = xlrd.open_workbook(path)
         sheet=workbook.sheet_by_name("login")
 
@@ -66,6 +66,3 @@ class LoginPage(BasePage):
     #     self.do_send_keys(self.PASSWORD, password)
     #     self.do_click(self.LOGIN_BUTTON)
     #     return HomePage(self.driver)
-
-    
- 

@@ -1,13 +1,10 @@
-from lib2to3.pgen2 import driver
 import sys, os
-
-from Pages.CheckoutYourInfoPage import CheckoutYourInfoPage
-
 myPath = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, myPath + '/../')
 
 from Locators.Locators import Locators
 from Pages.BasePage import BasePage
+from Pages.CheckoutYourInfoPage import CheckoutYourInfoPage
 
 class AddToCartPage(BasePage):
 
@@ -19,9 +16,6 @@ class AddToCartPage(BasePage):
 
         def is_item_1_exist_in_cart(self):
             return self.is_visible(Locators.ITEM_1)
-
-        def is_item_2_exist_in_cart(self):
-            return self.is_visible(Locators.ITEM_2)
 
         def do_click_checkout_button(self):
             self.do_click(Locators.CHECKOUT_BUTTON)

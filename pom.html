@@ -243,7 +243,7 @@ function filter_table(elem) {
 }
 </script>
     <h1>pom.html</h1>
-    <p>Report generated on 29-Mar-2022 at 22:40:10 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v2.1.1</p>
+    <p>Report generated on 30-Mar-2022 at 17:15:15 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v2.1.1</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -262,8 +262,8 @@ function filter_table(elem) {
         <td>Python</td>
         <td>3.10.2</td></tr></table>
     <h2>Summary</h2>
-    <p>10 tests ran in 44.51 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">9 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">1 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>13 tests ran in 52.63 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">11 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">2 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -277,12 +277,32 @@ function filter_table(elem) {
       <tbody class="failed results-table-row">
         <tr>
           <td class="col-result">Failed</td>
-          <td class="col-name">Tests/test_LoginPage.py::Test_Login::test_verify_login_into_app_with_incorrect_credentials[chrome]</td>
-          <td class="col-duration">11.45</td>
+          <td class="col-name">Tests/test_CheckoutOverviewPage.py::Test_CheckoutOverviewPage::test_verify_enter_info_in_cart[chrome]</td>
+          <td class="col-duration">11.42</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log">self = &lt;Tests.test_LoginPage.Test_Login object at 0x000001EF9FED4CD0&gt;<br/><br/>    @pytest.mark.order(3)<br/>    def test_verify_login_into_app_with_incorrect_credentials(self):<br/>        self.loginPage = LoginPage(self.driver)<br/>        self.loginPage.do_login_with_incorrect_credentials()<br/>&gt;       error_msg = self.loginPage.get_element_text(Locators.ERROR_MESSAGE)<br/><br/>Tests\test_LoginPage.py:38: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>Pages\BasePage.py:19: in get_element_text<br/>    element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator))<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = &lt;selenium.webdriver.support.wait.WebDriverWait (session=&quot;c7bb3325fc799ad130b3b92556b2f8af&quot;)&gt;<br/>method = &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x000001EF9FF67550&gt;, message = &#x27;&#x27;<br/><br/>    def until(self, method, message=&#x27;&#x27;):<br/>        &quot;&quot;&quot;Calls the method provided with the driver as an argument until the \<br/>        return value is not False.&quot;&quot;&quot;<br/>        screen = None<br/>        stacktrace = None<br/>    <br/>        end_time = time.time() + self._timeout<br/>        while True:<br/>            try:<br/>                value = method(self._driver)<br/>                if value:<br/>                    return value<br/>            except self._ignored_exceptions as exc:<br/>                screen = getattr(exc, &#x27;screen&#x27;, None)<br/>                stacktrace = getattr(exc, &#x27;stacktrace&#x27;, None)<br/>            time.sleep(self._poll)<br/>            if time.time() &gt; end_time:<br/>                break<br/>&gt;       raise TimeoutException(message, screen, stacktrace)<br/><span class="error">E       selenium.common.exceptions.TimeoutException: Message:</span><br/><br/>..\..\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\support\wait.py:80: TimeoutException<br/> -----------------------------Captured stderr setup------------------------------ <br/>
+            <div class="log">self = &lt;Tests.test_CheckoutOverviewPage.Test_CheckoutOverviewPage object at 0x00000246B6AB1DE0&gt;<br/><br/>    @pytest.mark.order(1)<br/>    def test_verify_enter_info_in_cart(self):<br/>        self.loginPage = LoginPage(self.driver)<br/>        homePage = self.loginPage.do_login()<br/>        self.homePage = HomePage(self.driver)<br/>        homePage.do_shopping()<br/>        homePage.is_cart_icon_clickable()<br/>        self.addToCart = AddToCartPage(self.driver)<br/>        self.addToCart.do_click_checkout_button()<br/>        self.checkInfo = CheckoutYourInfoPage(self.driver)<br/>&gt;       self.checkInfo.do_enter_your_info()<br/><br/>Tests\test_CheckoutOverviewPage.py:31: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>Pages\CheckoutYourInfoPage.py:33: in do_enter_your_info<br/>    self.do_send_keys(Locators.ZIP_POSTAL_CODE, postalcode)<br/>Pages\BasePage.py:16: in do_send_keys<br/>    WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator)).send_keys(text)<br/>..\..\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webelement.py:478: in send_keys<br/>    {&#x27;text&#x27;: &quot;&quot;.join(keys_to_typing(value)),<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>value = (134005.0,)<br/><br/>    def keys_to_typing(value):<br/>        &quot;&quot;&quot;Processes the values that will be typed in the element.&quot;&quot;&quot;<br/>        typing = []<br/>        for val in value:<br/>            if isinstance(val, Keys):<br/>                typing.append(val)<br/>            elif isinstance(val, int):<br/>                val = str(val)<br/>                for i in range(len(val)):<br/>                    typing.append(val[i])<br/>            else:<br/>&gt;               for i in range(len(val)):<br/><span class="error">E               TypeError: object of type &#x27;float&#x27; has no len()</span><br/><br/>..\..\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\common\utils.py:150: TypeError<br/> -----------------------------Captured stderr setup------------------------------ <br/>
+
+====== WebDriver manager ======
+Current google-chrome version is 99.0.4844
+Get LATEST driver version for 99.0.4844
+Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache
+<br/> -------------------------------Captured log setup------------------------------- <br/>[32mINFO    [0m WDM:logger.py:22 
+
+[32mINFO    [0m WDM:logger.py:12 ====== WebDriver manager ======
+[32mINFO    [0m WDM:logger.py:12 Current google-chrome version is 99.0.4844
+[32mINFO    [0m WDM:logger.py:12 Get LATEST driver version for 99.0.4844
+[32mINFO    [0m WDM:logger.py:12 Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache<br/></div></td></tr></tbody>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">Tests/test_CheckoutYourInfoPage.py::Test_CheckoutYourInfoPage::test_verify_enter_info_in_cart[chrome]</td>
+          <td class="col-duration">11.66</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">self = &lt;Tests.test_CheckoutYourInfoPage.Test_CheckoutYourInfoPage object at 0x00000246B6AB1720&gt;<br/><br/>    @pytest.mark.order(2)<br/>    def test_verify_enter_info_in_cart(self):<br/>        self.loginPage = LoginPage(self.driver)<br/>        homePage = self.loginPage.do_login()<br/>        self.homePage = HomePage(self.driver)<br/>        homePage.do_shopping()<br/>        homePage.is_cart_icon_clickable()<br/>        self.addToCart = AddToCartPage(self.driver)<br/>        self.addToCart.do_click_checkout_button()<br/>        self.checkInfo = CheckoutYourInfoPage(self.driver)<br/>&gt;       self.checkInfo.do_enter_your_info()<br/><br/>Tests\test_CheckoutYourInfoPage.py:27: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>Pages\CheckoutYourInfoPage.py:33: in do_enter_your_info<br/>    self.do_send_keys(Locators.ZIP_POSTAL_CODE, postalcode)<br/>Pages\BasePage.py:16: in do_send_keys<br/>    WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator)).send_keys(text)<br/>..\..\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webelement.py:478: in send_keys<br/>    {&#x27;text&#x27;: &quot;&quot;.join(keys_to_typing(value)),<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>value = (134005.0,)<br/><br/>    def keys_to_typing(value):<br/>        &quot;&quot;&quot;Processes the values that will be typed in the element.&quot;&quot;&quot;<br/>        typing = []<br/>        for val in value:<br/>            if isinstance(val, Keys):<br/>                typing.append(val)<br/>            elif isinstance(val, int):<br/>                val = str(val)<br/>                for i in range(len(val)):<br/>                    typing.append(val[i])<br/>            else:<br/>&gt;               for i in range(len(val)):<br/><span class="error">E               TypeError: object of type &#x27;float&#x27; has no len()</span><br/><br/>..\..\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\common\utils.py:150: TypeError<br/> -----------------------------Captured stderr setup------------------------------ <br/>
 
 ====== WebDriver manager ======
 Current google-chrome version is 99.0.4844
@@ -297,8 +317,8 @@ Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chrom
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">Tests/test_AddToCartPage.py::Test_AddTOCartPage::test_verify_checkout_button[chrome]</td>
-          <td class="col-duration">6.66</td>
+          <td class="col-name">Tests/test_AddToCartPage.py::Test_AddTOCartPage::test_verify_cart_page_title[chrome]</td>
+          <td class="col-duration">1.02</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -308,7 +328,7 @@ Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chrom
 Current google-chrome version is 99.0.4844
 Get LATEST driver version for 99.0.4844
 Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache
-<br/> -------------------------------Captured log setup------------------------------- <br/>[32mINFO    [0m WDM:logger.py:22 
+<br/> -------------------------------Captured log setup------------------------------- <br/>[32mINFO    [0m WDM:logger.py:12 
 
 [32mINFO    [0m WDM:logger.py:12 ====== WebDriver manager ======
 [32mINFO    [0m WDM:logger.py:12 Current google-chrome version is 99.0.4844
@@ -317,17 +337,28 @@ Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chrom
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">Tests/test_AddToCartPage.py::Test_AddTOCartPage::test_verify_cart_page_title[chrome]</td>
-          <td class="col-duration">10.49</td>
+          <td class="col-name">Tests/test_AddToCartPage.py::Test_AddTOCartPage::test_verify_item_1_in_cart[chrome]</td>
+          <td class="col-duration">1.00</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="empty log">No log output captured.</div></td></tr></tbody>
+            <div class="log"> -----------------------------Captured stderr setup------------------------------ <br/>
+
+====== WebDriver manager ======
+Current google-chrome version is 99.0.4844
+Get LATEST driver version for 99.0.4844
+Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache
+<br/> -------------------------------Captured log setup------------------------------- <br/>[32mINFO    [0m WDM:logger.py:12 
+
+[32mINFO    [0m WDM:logger.py:12 ====== WebDriver manager ======
+[32mINFO    [0m WDM:logger.py:12 Current google-chrome version is 99.0.4844
+[32mINFO    [0m WDM:logger.py:12 Get LATEST driver version for 99.0.4844
+[32mINFO    [0m WDM:logger.py:12 Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">Tests/test_HomePage.py::Test_Home::test_verify_home_page_title[chrome]</td>
-          <td class="col-duration">1.29</td>
+          <td class="col-duration">1.12</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -347,7 +378,7 @@ Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chrom
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">Tests/test_HomePage.py::Test_Home::test_verify_home_page_header[chrome]</td>
-          <td class="col-duration">0.61</td>
+          <td class="col-duration">0.56</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -356,7 +387,7 @@ Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chrom
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">Tests/test_HomePage.py::Test_Home::test_verify_cart_icon_visible[chrome]</td>
-          <td class="col-duration">0.50</td>
+          <td class="col-duration">0.45</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -365,7 +396,7 @@ Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chrom
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">Tests/test_HomePage.py::Test_Home::test_verify_shopping[chrome]</td>
-          <td class="col-duration">0.59</td>
+          <td class="col-duration">0.60</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -374,7 +405,7 @@ Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chrom
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">Tests/test_HomePage.py::Test_Home::test_verify_logout_into_app[chrome]</td>
-          <td class="col-duration">1.12</td>
+          <td class="col-duration">1.14</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -383,7 +414,7 @@ Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chrom
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">Tests/test_LoginPage.py::Test_Login::test_verify_login_page_title[chrome]</td>
-          <td class="col-duration">1.24</td>
+          <td class="col-duration">0.65</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -403,8 +434,37 @@ Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chrom
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">Tests/test_LoginPage.py::Test_Login::test_verify_login_into_app[chrome]</td>
-          <td class="col-duration">0.75</td>
+          <td class="col-duration">0.64</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="empty log">No log output captured.</div></td></tr></tbody></table></body></html>
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">Tests/test_LoginPage.py::Test_Login::test_verify_login_into_app_with_incorrect_credentials[chrome]</td>
+          <td class="col-duration">0.44</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">Tests/test_AddToCartPage.py::Test_AddTOCartPage::test_verify_checkout_button[chrome]</td>
+          <td class="col-duration">1.10</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stderr setup------------------------------ <br/>
+
+====== WebDriver manager ======
+Current google-chrome version is 99.0.4844
+Get LATEST driver version for 99.0.4844
+Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache
+<br/> -------------------------------Captured log setup------------------------------- <br/>[32mINFO    [0m WDM:logger.py:12 
+
+[32mINFO    [0m WDM:logger.py:12 ====== WebDriver manager ======
+[32mINFO    [0m WDM:logger.py:12 Current google-chrome version is 99.0.4844
+[32mINFO    [0m WDM:logger.py:12 Get LATEST driver version for 99.0.4844
+[32mINFO    [0m WDM:logger.py:12 Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache<br/></div></td></tr></tbody></table></body></html>

@@ -10,7 +10,15 @@ class TestData:
 
     HOME_PAGE_TITLE = "Swag Labs"
     HOME_PAGE_HEADER = "PRODUCTS"
-    ITEMS_IN_CART = "2"
+    ITEMS_IN_CART = "1"
 
     '''cart page'''
     CART_PAGE_TITLE = "YOUR CART"
+
+    '''Check out your Info page'''
+    FIRST_NAME = "SeleniumBase"
+    LAST_NAME = "Rocks"
+    POSTAL_CODE = 1234
+
+    '''Checkout overview page'''
+    CHECOUT_OVERVIEW_TITLE = "Checkout: Overview"
