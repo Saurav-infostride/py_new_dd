@@ -14,4 +14,9 @@ def init_driver(request):
         web_driver.maximize_window()
     request.cls.driver = web_driver
     yield
-    # web_driver.close()
+    web_driver.close()
+
+'''Hook for adding Environment info into an HTML report'''
+def pytest_configure(config):
+    config._metadata['Project Name'] = 'Sauce Demo'
+    config._metadata['Tester'] = 'Saurav'

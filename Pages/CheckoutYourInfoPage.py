@@ -1,4 +1,6 @@
 import sys, os
+
+import webdrivermanager
 myPath = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, myPath + '/../')
 
@@ -6,12 +8,14 @@ import time
 from Locators.Locators import Locators
 from Pages.BasePage import BasePage
 from Config.config import TestData
+from selenium.webdriver.common.by import By
 
 class CheckoutYourInfoPage(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver)
 
+    '''can be used to send the values'''
     # @pytest.mark.parametrize(  
     #     "firstname", "lastname", "postalcode",
     #     [
@@ -19,14 +23,26 @@ class CheckoutYourInfoPage(BasePage):
     #     ]
     # )
     def do_enter_your_info(self):
+        # '''Fetching the data from config file'''
+        # self.do_send_keys(Locators.FIRST_NAME, TestData.FIRST_NAME)
+        # time.sleep(5)
+        # self.do_send_keys(Locators.LAST_NAME, TestData.LAST_NAME)
+        # time.sleep(5)
+        # self.do_send_keys(Locators.ZIP_POSTAL_CODE, TestData.POSTAL_CODE)
+        # time.sleep(5)
+        # self.do_click(Locators.CONTINUE_BUTTON)
+
+            time.sleep(2)
+            self.driver.find_element(By.XPATH, "(//*[@class='input_error form_input'])[1]").send_keys("Saurav")
+            time.sleep(10)
         
-        self.do_send_keys(Locators.FIRST_NAME, TestData.FIRST_NAME)
-        time.sleep(5)
-        self.do_send_keys(Locators.LAST_NAME, TestData.LAST_NAME)
-        time.sleep(5)
-        self.do_send_keys(Locators.ZIP_POSTAL_CODE, TestData.POSTAL_CODE)
-        time.sleep(5)
-        self.do_click(Locators.CONTINUE_BUTTON)
+            # self.driver.find_element(By.XPATH, "(//div//input)[2]").click()
+            self.driver.find_element(By.XPATH, "(//div//input)[2]").send_keys("Sharma")
+            time.sleep(2)
+            self.driver.find_element(By.XPATH, "(//*[@class='input_error form_input'])[2]").send_keys("Sharma")
+            self.driver.find_element(By.XPATH, "(//*[@class='input_error form_input'])[3]").send_keys(123445)
+            self.driver.find_element(By.ID, "continue").click()
+
 
         # path = r"C://Users//SauravSharma//Pytest//Pytest_pom_dd_sauce_demo//TestData.xlsx"
         # workbook = xlrd.open_workbook(path)

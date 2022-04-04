@@ -35,7 +35,6 @@ class Test_Home(BaseTest):
         assert notification
         allure.attach(self.driver.get_screenshot_as_png(),attachment_type=AttachmentType.JPG)
 
-    ''' Add to Cart functionality'''
     @pytest.mark.order()
     def test_verify_shopping(self):
         self.loginPage = LoginPage(self.driver)

@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 
 class Locators:
     
+    '''loginpage'''
     EMAIL = (By.XPATH, "//input[@id='user-name']")
     PASSWORD = (By.XPATH, "//input[@id='password']")
     LOGIN_BUTTON = (By.XPATH, "//input[@id='login-button']")
@@ -11,9 +12,6 @@ class Locators:
     CART_ICON = (By.XPATH, "//a[@class='shopping_cart_link']")
     NO_OF_ITEMS_IN_CART_DISPLAYED = (By.XPATH, "//span[text()='1']")
     HEADER = (By.XPATH, "//span[@class='title']")
-    # '''(//div[contains(text(),'Sauce Labs ')]/following::div/button[contains(text(),'Add to cart')])[6]'''
-    # '''(//button[contains(text(),'Add to cart')])[1]'''
-
     ADD_TO_CART_BTN = (By.XPATH, "//button[contains(text(),'Add to cart')])[%s]")
     SAUCE_LABS_BACPACK = (By.XPATH, "//button[@id='add-to-cart-sauce-labs-backpack']")
     SAUCE_LABS_BIKE_LIGHT = (By.XPATH, "//*[@name='add-to-cart-sauce-labs-bike-light']")
