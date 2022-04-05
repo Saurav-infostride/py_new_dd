@@ -1,4 +1,5 @@
 import sys, os
+import time
 from pytest import yield_fixture
 
 myPath = os.path.dirname(os.path.abspath(__file__))
@@ -9,6 +10,7 @@ from Locators.Locators import Locators
 from Config.config import TestData
 from Pages.HomePage import HomePage
 from Pages.BasePage import BasePage
+from selenium.webdriver.common.by import By
 
 class LoginPage(BasePage):
 
@@ -29,9 +31,6 @@ class LoginPage(BasePage):
         sheet=workbook.sheet_by_name("login")
 
         rowCount = sheet.nrows
-        # cols = sheet.ncols
-        # print(rowCount)
-        # print(cols)
         for curr_row in range(1, rowCount):
             username = sheet.cell_value(curr_row, 0)
             password = sheet.cell_value(curr_row, 1)
@@ -39,30 +38,17 @@ class LoginPage(BasePage):
             self.do_send_keys(Locators.PASSWORD, password)
             self.do_click(Locators.LOGIN_BUTTON)
             return HomePage(self.driver)
-            # return AddToCartPage(self.driver)
-
+    
+    '''this is use to login to application with incorrect credentials'''
     def do_login_with_incorrect_credentials(self):
         path = r"C://Users//SauravSharma//Pytest//Pytest_pom_dd_sauce_demo//TestData.xlsx"
         workbook = xlrd.open_workbook(path)
         sheet=workbook.sheet_by_name("login")
 
         rowCount = sheet.nrows
-        # cols = sheet.ncols
-        # print(rowCount)
-        # print(cols)
         for curr_row in range(2, rowCount):
             username = sheet.cell_value(curr_row, 1)
             password = sheet.cell_value(curr_row, 2)
             self.do_send_keys(Locators.EMAIL, username)
             self.do_send_keys(Locators.PASSWORD, password)
             self.do_click(Locators.LOGIN_BUTTON)
-            
-
-
-
-'''method of login into if fetching data from config file'''
-    # def do_login(self,username,password):
-    #     self.do_send_keys(self.EMAIL, username)
-    #     self.do_send_keys(self.PASSWORD, password)
-    #     self.do_click(self.LOGIN_BUTTON)
-    #     return HomePage(self.driver)

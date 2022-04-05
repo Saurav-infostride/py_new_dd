@@ -16,8 +16,9 @@ class Test_Home(BaseTest):
     def test_verify_home_page_title(self):
         self.loginPage = LoginPage(self.driver)
         homePage = self.loginPage.do_login()
-        title = homePage.get_title(TestData.HOME_PAGE_TITLE)
+        title = homePage.get_element_text(Locators.HOME_PAGE_TITLE)
         assert title == TestData.HOME_PAGE_TITLE
+        allure.attach(self.driver.get_screenshot_as_png(),attachment_type=AttachmentType.PNG)
 
     @pytest.mark.order()
     def test_verify_home_page_header(self): 
@@ -42,9 +43,11 @@ class Test_Home(BaseTest):
         homePage.do_shopping()
         items_in_cart = homePage.get_element_text(Locators.NO_OF_ITEMS_IN_CART_DISPLAYED)
         assert items_in_cart == TestData.ITEMS_IN_CART
+        allure.attach(self.driver.get_screenshot_as_png(),attachment_type=AttachmentType.PNG)
 
     @pytest.mark.order()
     def test_verify_logout_into_app(self):
         self.loginPage = LoginPage(self.driver)
         homePage = self.loginPage.do_login()
         homePage.do_logout()
+        allure.attach(self.driver.get_screenshot_as_png(),attachment_type=AttachmentType.PNG)

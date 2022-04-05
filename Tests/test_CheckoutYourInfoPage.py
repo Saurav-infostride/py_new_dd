@@ -10,18 +10,34 @@ from allure_commons.types import AttachmentType
 from Tests.test_Base import BaseTest
 from Pages.HomePage import HomePage
 from Pages.LoginPage import LoginPage
-
+from Config.config import TestData
+from Locators.Locators import Locators
 
 class Test_CheckoutYourInfoPage(BaseTest):
 
-    @pytest.mark.order(1)
+    @pytest.mark.order()
+    def test_verify_checkout_your_info_page_title(self):
+        self.loginPage = LoginPage(self.driver)
+        homePage = self.loginPage.do_login()
+        self.homePage = HomePage(self.driver)
+        homePage.do_shopping()
+        homePage.click_on_cart_icon()
+        self.addToCart = AddToCartPage(self.driver)
+        self.addToCart.do_click_checkout_button()
+        self.checkInfo = CheckoutYourInfoPage(self.driver)
+        title = self.checkInfo.get_title(TestData.CHECKOUT_YOUR_INFO_TITLE)
+        assert title == TestData.CHECKOUT_YOUR_INFO_TITLE
+        allure.attach(self.driver.get_screenshot_as_png(),attachment_type=AttachmentType.JPG)  
+
+    @pytest.mark.order()
     def test_verify_enter_info_in_cart(self):
         self.loginPage = LoginPage(self.driver)
         homePage = self.loginPage.do_login()
         self.homePage = HomePage(self.driver)
         homePage.do_shopping()
-        homePage.is_cart_icon_clickable()
+        homePage.click_on_cart_icon()
         self.addToCart = AddToCartPage(self.driver)
         self.addToCart.do_click_checkout_button()
         self.checkInfo = CheckoutYourInfoPage(self.driver)
-        self.checkInfo.do_enter_your_info()    
+        self.checkInfo.do_enter_your_info()
+        allure.attach(self.driver.get_screenshot_as_png(),attachment_type=AttachmentType.JPG)      

@@ -1,5 +1,5 @@
-from selenium import webdriver
 import pytest
+from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 
@@ -16,7 +16,7 @@ def init_driver(request):
     yield
     web_driver.close()
 
-'''Hook for adding Environment info into an HTML report'''
+'''Hook for adding info into an HTML report'''
 def pytest_configure(config):
     config._metadata['Project Name'] = 'Sauce Demo'
     config._metadata['Tester'] = 'Saurav'

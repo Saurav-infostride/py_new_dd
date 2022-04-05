@@ -17,7 +17,7 @@ class HomePage(BasePage):
     def is_cart_icon_exist(self):
         return self.is_visible(Locators.CART_ICON)
 
-    def is_cart_icon_clickable(self):
+    def click_on_cart_icon(self):
         self.do_click(Locators.CART_ICON)
         return AddToCartPage(self.driver)
 

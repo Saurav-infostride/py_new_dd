@@ -243,7 +243,7 @@ function filter_table(elem) {
 }
 </script>
     <h1>test_report.html</h1>
-    <p>Report generated on 04-Apr-2022 at 19:53:29 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v2.1.1</p>
+    <p>Report generated on 05-Apr-2022 at 15:53:53 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v2.1.1</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -268,8 +268,8 @@ function filter_table(elem) {
         <td>Tester</td>
         <td>Saurav</td></tr></table>
     <h2>Summary</h2>
-    <p>13 tests ran in 43.98 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">13 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>13 tests ran in 45.00 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">12 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">1 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -280,11 +280,31 @@ function filter_table(elem) {
           <th>Links</th></tr>
         <tr hidden="true" id="not-found-message">
           <th colspan="4">No results found. Try to check the filters</th></tr></thead>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">Tests/test_CheckoutOverviewPage.py::Test_CheckoutOverviewPage::test_verify_click_on_finish_button[chrome]</td>
+          <td class="col-duration">23.10</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">[gw2] win32 -- Python 3.10.2 C:\Users\SauravSharma\AppData\Local\Programs\Python\Python310\python.exe<br/><br/>self = &lt;Tests.test_CheckoutOverviewPage.Test_CheckoutOverviewPage object at 0x0000012A56D96290&gt;<br/><br/>    @pytest.mark.order(1)<br/>    def test_verify_click_on_finish_button(self):<br/>        self.loginPage = LoginPage(self.driver)<br/>        homePage = self.loginPage.do_login()<br/>        self.homePage = HomePage(self.driver)<br/>        homePage.do_shopping()<br/>        homePage.click_on_cart_icon()<br/>        self.addToCart = AddToCartPage(self.driver)<br/>        self.addToCart.do_click_checkout_button()<br/>        self.checkInfo = CheckoutYourInfoPage(self.driver)<br/>        self.checkInfo.do_enter_your_info()<br/>&gt;       self.checkInfo.do_click(Locators.CONTINUE_BUTTON)<br/><br/>Tests\test_CheckoutOverviewPage.py:30: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/>Pages\BasePage.py:13: in do_click<br/>    WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator)).click()<br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = &lt;selenium.webdriver.support.wait.WebDriverWait (session=&quot;ecb297bcb9f0631c4170db678da2d3ed&quot;)&gt;<br/>method = &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x0000012A56DAFCA0&gt;, message = &#x27;&#x27;<br/><br/>    def until(self, method, message=&#x27;&#x27;):<br/>        &quot;&quot;&quot;Calls the method provided with the driver as an argument until the \<br/>        return value is not False.&quot;&quot;&quot;<br/>        screen = None<br/>        stacktrace = None<br/>    <br/>        end_time = time.time() + self._timeout<br/>        while True:<br/>            try:<br/>                value = method(self._driver)<br/>                if value:<br/>                    return value<br/>            except self._ignored_exceptions as exc:<br/>                screen = getattr(exc, &#x27;screen&#x27;, None)<br/>                stacktrace = getattr(exc, &#x27;stacktrace&#x27;, None)<br/>            time.sleep(self._poll)<br/>            if time.time() &gt; end_time:<br/>                break<br/>&gt;       raise TimeoutException(message, screen, stacktrace)<br/><span class="error">E       selenium.common.exceptions.TimeoutException: Message:</span><br/><br/>..\..\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\support\wait.py:80: TimeoutException<br/> -----------------------------Captured stderr setup------------------------------ <br/>
+
+====== WebDriver manager ======
+Current google-chrome version is 99.0.4844
+Get LATEST driver version for 99.0.4844
+Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache
+<br/> -------------------------------Captured log setup------------------------------- <br/>[32mINFO    [0m WDM:logger.py:22 
+
+[32mINFO    [0m WDM:logger.py:12 ====== WebDriver manager ======
+[32mINFO    [0m WDM:logger.py:12 Current google-chrome version is 99.0.4844
+[32mINFO    [0m WDM:logger.py:12 Get LATEST driver version for 99.0.4844
+[32mINFO    [0m WDM:logger.py:12 Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">Tests/test_LoginPage.py::Test_Login::test_verify_login_page_title[chrome]</td>
-          <td class="col-duration">3.09</td>
+          <td class="col-duration">4.11</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -299,12 +319,12 @@ Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chrom
 [32mINFO    [0m WDM:logger.py:12 ====== WebDriver manager ======
 [32mINFO    [0m WDM:logger.py:12 Current google-chrome version is 99.0.4844
 [32mINFO    [0m WDM:logger.py:12 Get LATEST driver version for 99.0.4844
-[32mINFO    [0m WDM:logger.py:12 Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache<br/> -------------------------------Captured log call-------------------------------- <br/>[32mINFO    [0m root:test_LoginPage.py:21 ****Started Login Page Title****<br/></div></td></tr></tbody>
+[32mINFO    [0m WDM:logger.py:12 Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache<br/> -------------------------------Captured log call-------------------------------- <br/>[32mINFO    [0m root:test_LoginPage.py:20 ****Started Login Page Title****<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">Tests/test_HomePage.py::Test_Home::test_verify_home_page_title[chrome]</td>
-          <td class="col-duration">5.96</td>
+          <td class="col-name">Tests/test_LoginPage.py::Test_Login::test_verify_login_into_app_with_incorrect_credentials[chrome]</td>
+          <td class="col-duration">5.48</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -319,72 +339,12 @@ Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chrom
 [32mINFO    [0m WDM:logger.py:12 ====== WebDriver manager ======
 [32mINFO    [0m WDM:logger.py:12 Current google-chrome version is 99.0.4844
 [32mINFO    [0m WDM:logger.py:12 Get LATEST driver version for 99.0.4844
-[32mINFO    [0m WDM:logger.py:12 Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache<br/></div></td></tr></tbody>
+[32mINFO    [0m WDM:logger.py:12 Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache<br/> -------------------------------Captured log call-------------------------------- <br/>[32mINFO    [0m root:test_LoginPage.py:37 ****Started Login Test With InCorrect Credentials****<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">Tests/test_HomePage.py::Test_Home::test_verify_cart_icon_visible[chrome]</td>
-          <td class="col-duration">8.19</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> -----------------------------Captured stderr setup------------------------------ <br/>
-
-====== WebDriver manager ======
-Current google-chrome version is 99.0.4844
-Get LATEST driver version for 99.0.4844
-Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache
-<br/> -------------------------------Captured log setup------------------------------- <br/>[32mINFO    [0m WDM:logger.py:22 
-
-[32mINFO    [0m WDM:logger.py:12 ====== WebDriver manager ======
-[32mINFO    [0m WDM:logger.py:12 Current google-chrome version is 99.0.4844
-[32mINFO    [0m WDM:logger.py:12 Get LATEST driver version for 99.0.4844
-[32mINFO    [0m WDM:logger.py:12 Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">Tests/test_HomePage.py::Test_Home::test_verify_shopping[chrome]</td>
-          <td class="col-duration">6.09</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> -----------------------------Captured stderr setup------------------------------ <br/>
-
-====== WebDriver manager ======
-Current google-chrome version is 99.0.4844
-Get LATEST driver version for 99.0.4844
-Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache
-<br/> -------------------------------Captured log setup------------------------------- <br/>[32mINFO    [0m WDM:logger.py:22 
-
-[32mINFO    [0m WDM:logger.py:12 ====== WebDriver manager ======
-[32mINFO    [0m WDM:logger.py:12 Current google-chrome version is 99.0.4844
-[32mINFO    [0m WDM:logger.py:12 Get LATEST driver version for 99.0.4844
-[32mINFO    [0m WDM:logger.py:12 Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">Tests/test_AddToCartPage.py::Test_AddTOCartPage::test_verify_item_1_in_cart[chrome]</td>
-          <td class="col-duration">8.63</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> -----------------------------Captured stderr setup------------------------------ <br/>
-
-====== WebDriver manager ======
-Current google-chrome version is 99.0.4844
-Get LATEST driver version for 99.0.4844
-Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache
-<br/> -------------------------------Captured log setup------------------------------- <br/>[32mINFO    [0m WDM:logger.py:22 
-
-[32mINFO    [0m WDM:logger.py:12 ====== WebDriver manager ======
-[32mINFO    [0m WDM:logger.py:12 Current google-chrome version is 99.0.4844
-[32mINFO    [0m WDM:logger.py:12 Get LATEST driver version for 99.0.4844
-[32mINFO    [0m WDM:logger.py:12 Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">Tests/test_AddToCartPage.py::Test_AddTOCartPage::test_verify_checkout_button[chrome]</td>
-          <td class="col-duration">7.52</td>
+          <td class="col-duration">10.62</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -404,7 +364,7 @@ Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chrom
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">Tests/test_LoginPage.py::Test_Login::test_verify_login_into_app[chrome]</td>
-          <td class="col-duration">5.93</td>
+          <td class="col-duration">11.48</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -419,53 +379,13 @@ Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chrom
 [32mINFO    [0m WDM:logger.py:12 ====== WebDriver manager ======
 [32mINFO    [0m WDM:logger.py:12 Current google-chrome version is 99.0.4844
 [32mINFO    [0m WDM:logger.py:12 Get LATEST driver version for 99.0.4844
-[32mINFO    [0m WDM:logger.py:12 Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache<br/> -------------------------------Captured log call-------------------------------- <br/>[32mINFO    [0m root:test_LoginPage.py:29 ****Started Login Test With Correct Credentials****
-[32mINFO    [0m root:test_LoginPage.py:33 ****Login Test Passed****<br/></div></td></tr></tbody>
+[32mINFO    [0m WDM:logger.py:12 Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache<br/> -------------------------------Captured log call-------------------------------- <br/>[32mINFO    [0m root:test_LoginPage.py:28 ****Started Login Test With Correct Credentials****
+[32mINFO    [0m root:test_LoginPage.py:32 ****Login Test Passed****<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">Tests/test_LoginPage.py::Test_Login::test_verify_login_into_app_with_incorrect_credentials[chrome]</td>
-          <td class="col-duration">8.03</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> -----------------------------Captured stderr setup------------------------------ <br/>
-
-====== WebDriver manager ======
-Current google-chrome version is 99.0.4844
-Get LATEST driver version for 99.0.4844
-Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache
-<br/> -------------------------------Captured log setup------------------------------- <br/>[32mINFO    [0m WDM:logger.py:22 
-
-[32mINFO    [0m WDM:logger.py:12 ====== WebDriver manager ======
-[32mINFO    [0m WDM:logger.py:12 Current google-chrome version is 99.0.4844
-[32mINFO    [0m WDM:logger.py:12 Get LATEST driver version for 99.0.4844
-[32mINFO    [0m WDM:logger.py:12 Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache<br/> -------------------------------Captured log call-------------------------------- <br/>[32mINFO    [0m root:test_LoginPage.py:38 ****Started Login Test With InCorrect Credentials****<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">Tests/test_HomePage.py::Test_Home::test_verify_home_page_header[chrome]</td>
-          <td class="col-duration">5.03</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> -----------------------------Captured stderr setup------------------------------ <br/>
-
-====== WebDriver manager ======
-Current google-chrome version is 99.0.4844
-Get LATEST driver version for 99.0.4844
-Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache
-<br/> -------------------------------Captured log setup------------------------------- <br/>[32mINFO    [0m WDM:logger.py:22 
-
-[32mINFO    [0m WDM:logger.py:12 ====== WebDriver manager ======
-[32mINFO    [0m WDM:logger.py:12 Current google-chrome version is 99.0.4844
-[32mINFO    [0m WDM:logger.py:12 Get LATEST driver version for 99.0.4844
-[32mINFO    [0m WDM:logger.py:12 Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">Tests/test_HomePage.py::Test_Home::test_verify_logout_into_app[chrome]</td>
-          <td class="col-duration">8.24</td>
+          <td class="col-name">Tests/test_HomePage.py::Test_Home::test_verify_shopping[chrome]</td>
+          <td class="col-duration">9.82</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -485,7 +405,67 @@ Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chrom
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">Tests/test_AddToCartPage.py::Test_AddTOCartPage::test_verify_cart_page_title[chrome]</td>
-          <td class="col-duration">4.86</td>
+          <td class="col-duration">12.51</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stderr setup------------------------------ <br/>
+
+====== WebDriver manager ======
+Current google-chrome version is 99.0.4844
+Get LATEST driver version for 99.0.4844
+Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache
+<br/> -------------------------------Captured log setup------------------------------- <br/>[32mINFO    [0m WDM:logger.py:22 
+
+[32mINFO    [0m WDM:logger.py:12 ====== WebDriver manager ======
+[32mINFO    [0m WDM:logger.py:12 Current google-chrome version is 99.0.4844
+[32mINFO    [0m WDM:logger.py:12 Get LATEST driver version for 99.0.4844
+[32mINFO    [0m WDM:logger.py:12 Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">Tests/test_AddToCartPage.py::Test_AddTOCartPage::test_verify_checkout_button[chrome]</td>
+          <td class="col-duration">11.76</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stderr setup------------------------------ <br/>
+
+====== WebDriver manager ======
+Current google-chrome version is 99.0.4844
+Get LATEST driver version for 99.0.4844
+Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache
+<br/> -------------------------------Captured log setup------------------------------- <br/>[32mINFO    [0m WDM:logger.py:22 
+
+[32mINFO    [0m WDM:logger.py:12 ====== WebDriver manager ======
+[32mINFO    [0m WDM:logger.py:12 Current google-chrome version is 99.0.4844
+[32mINFO    [0m WDM:logger.py:12 Get LATEST driver version for 99.0.4844
+[32mINFO    [0m WDM:logger.py:12 Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">Tests/test_AddToCartPage.py::Test_AddTOCartPage::test_verify_item_1_in_cart[chrome]</td>
+          <td class="col-duration">8.44</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stderr setup------------------------------ <br/>
+
+====== WebDriver manager ======
+Current google-chrome version is 99.0.4844
+Get LATEST driver version for 99.0.4844
+Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache
+<br/> -------------------------------Captured log setup------------------------------- <br/>[32mINFO    [0m WDM:logger.py:22 
+
+[32mINFO    [0m WDM:logger.py:12 ====== WebDriver manager ======
+[32mINFO    [0m WDM:logger.py:12 Current google-chrome version is 99.0.4844
+[32mINFO    [0m WDM:logger.py:12 Get LATEST driver version for 99.0.4844
+[32mINFO    [0m WDM:logger.py:12 Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">Tests/test_HomePage.py::Test_Home::test_verify_home_page_header[chrome]</td>
+          <td class="col-duration">12.54</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -505,7 +485,7 @@ Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chrom
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">Tests/test_CheckoutYourInfoPage.py::Test_CheckoutYourInfoPage::test_verify_enter_info_in_cart[chrome]</td>
-          <td class="col-duration">23.09</td>
+          <td class="col-duration">11.71</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -524,8 +504,28 @@ Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chrom
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">Tests/test_CheckoutOverviewPage.py::Test_CheckoutOverviewPage::test_verify_click_on_finish_button[chrome]</td>
-          <td class="col-duration">22.37</td>
+          <td class="col-name">Tests/test_LoginPage.py::Test_Login::test_verify_logout_into_app[chrome]</td>
+          <td class="col-duration">12.68</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> -----------------------------Captured stderr setup------------------------------ <br/>
+
+====== WebDriver manager ======
+Current google-chrome version is 99.0.4844
+Get LATEST driver version for 99.0.4844
+Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache
+<br/> -------------------------------Captured log setup------------------------------- <br/>[32mINFO    [0m WDM:logger.py:22 
+
+[32mINFO    [0m WDM:logger.py:12 ====== WebDriver manager ======
+[32mINFO    [0m WDM:logger.py:12 Current google-chrome version is 99.0.4844
+[32mINFO    [0m WDM:logger.py:12 Get LATEST driver version for 99.0.4844
+[32mINFO    [0m WDM:logger.py:12 Driver [C:\Users\SauravSharma\.wdm\drivers\chromedriver\win32\99.0.4844.51\chromedriver.exe] found in cache<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">Tests/test_HomePage.py::Test_Home::test_verify_home_page_title[chrome]</td>
+          <td class="col-duration">8.56</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">

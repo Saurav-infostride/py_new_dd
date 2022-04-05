@@ -32,12 +32,14 @@ class Test_AddTOCartPage(BaseTest):
         addToCartPage = homePage
         homePage.do_click(Locators.CART_ICON)
         addToCartPage.do_click(Locators.CHECKOUT_BUTTON)
+        allure.attach(self.driver.get_screenshot_as_png(),attachment_type=AttachmentType.PNG)
 
     @pytest.mark.order()
-    def test_verify_item_1_in_cart(self):
+    def test_verify_item_in_cart(self):
         self.loginPage = LoginPage(self.driver)
         homePage = self.loginPage.do_login()
         addToCartPage = homePage
         homePage.do_shopping()
         homePage.do_click(Locators.CART_ICON)
-        assert addToCartPage.is_visible(Locators.ITEM_1)
+        assert addToCartPage.is_visible(Locators.ITEM)
+        allure.attach(self.driver.get_screenshot_as_png(),attachment_type=AttachmentType.PNG)
