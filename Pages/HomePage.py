@@ -1,13 +1,19 @@
-import sys, os
+
+import enum
+import time
+from Locators.Locators import Locators
+from Pages.BasePage import BasePage
+from Pages.AddToCartPage import AddToCartPage
+import sys
+import os
+
+from Pages.Enums import Products
 myPath = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, myPath + '/../')
 
-from Pages.AddToCartPage import AddToCartPage
-from Pages.BasePage import BasePage
-from Locators.Locators import Locators
 
 class HomePage(BasePage):
-    
+
     def __init__(self, driver):
         super().__init__(driver)
 
@@ -26,9 +32,13 @@ class HomePage(BasePage):
 
     ''' Add to Cart functionality'''
     def do_shopping(self):
-        self.do_click(Locators.SAUCE_LABS_BACPACK)
+        for i in Products:
+            a = self.driver.find_element_by_xpath(
+                "(//*[text()='Add to cart'])[%s]" % str(i.value))
+            a.click()
+            time.sleep(5)
+            
 
     def do_logout(self):
         self.do_click(Locators.BURGER_MENU_BUTTON)
         self.do_click(Locators.LOGOUT_BUTTON)
-

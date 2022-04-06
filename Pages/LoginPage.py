@@ -26,7 +26,7 @@ class LoginPage(BasePage):
 
     '''this is use to login to application'''
     def do_login(self):
-        path = r"C://Users//SauravSharma//Pytest//Pytest_pom_dd_sauce_demo//TestData.xlsx"
+        path = "TestData.xlsx"
         workbook = xlrd.open_workbook(path)
         sheet=workbook.sheet_by_name("login")
 
@@ -41,14 +41,6 @@ class LoginPage(BasePage):
     
     '''this is use to login to application with incorrect credentials'''
     def do_login_with_incorrect_credentials(self):
-        path = r"C://Users//SauravSharma//Pytest//Pytest_pom_dd_sauce_demo//TestData.xlsx"
-        workbook = xlrd.open_workbook(path)
-        sheet=workbook.sheet_by_name("login")
-
-        rowCount = sheet.nrows
-        for curr_row in range(2, rowCount):
-            username = sheet.cell_value(curr_row, 1)
-            password = sheet.cell_value(curr_row, 2)
-            self.do_send_keys(Locators.EMAIL, username)
-            self.do_send_keys(Locators.PASSWORD, password)
+            self.do_send_keys(Locators.EMAIL, TestData.INC_USERNAME)
+            self.do_send_keys(Locators.PASSWORD, TestData.INC_PASSWORD)
             self.do_click(Locators.LOGIN_BUTTON)

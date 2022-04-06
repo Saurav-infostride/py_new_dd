@@ -16,7 +16,7 @@ class Test_Home(BaseTest):
     def test_verify_home_page_title(self):
         self.loginPage = LoginPage(self.driver)
         homePage = self.loginPage.do_login()
-        title = homePage.get_element_text(Locators.HOME_PAGE_TITLE)
+        title = homePage.get_title()
         assert title == TestData.HOME_PAGE_TITLE
         allure.attach(self.driver.get_screenshot_as_png(),attachment_type=AttachmentType.PNG)
 

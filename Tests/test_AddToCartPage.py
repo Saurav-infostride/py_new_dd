@@ -17,9 +17,9 @@ class Test_AddTOCartPage(BaseTest):
     def test_verify_cart_page_title(self):
         self.loginPage = LoginPage(self.driver)
         homePage = self.loginPage.do_login()
-        addToCartPage = homePage
         homePage.do_click(Locators.CART_ICON)
-        cart_title = addToCartPage.get_element_text(Locators.CART_PAGE_TITLE)
+        addToCartPage = homePage
+        cart_title = addToCartPage.get_title()
         if cart_title == TestData.CART_PAGE_TITLE:
             allure.attach(self.driver.get_screenshot_as_png(),attachment_type=AttachmentType.PNG)
         else:
@@ -38,8 +38,8 @@ class Test_AddTOCartPage(BaseTest):
     def test_verify_item_in_cart(self):
         self.loginPage = LoginPage(self.driver)
         homePage = self.loginPage.do_login()
-        addToCartPage = homePage
         homePage.do_shopping()
         homePage.do_click(Locators.CART_ICON)
+        addToCartPage = homePage
         assert addToCartPage.is_visible(Locators.ITEM)
         allure.attach(self.driver.get_screenshot_as_png(),attachment_type=AttachmentType.PNG)

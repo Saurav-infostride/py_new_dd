@@ -17,7 +17,7 @@ from Config.config import TestData
 
 class Test_CheckoutOverviewPage(BaseTest):
 
-    @pytest.mark.order()
+    @pytest.mark.order(1)
     def test_verify_checkout_overview_page_title(self):
         self.loginPage = LoginPage(self.driver)
         homePage = self.loginPage.do_login()
@@ -28,13 +28,12 @@ class Test_CheckoutOverviewPage(BaseTest):
         self.addToCart.do_click_checkout_button()
         self.checkInfo = CheckoutYourInfoPage(self.driver)
         self.checkInfo.do_enter_your_info()  
-        self.checkInfo.do_click(Locators.CONTINUE_BUTTON)
         self.checkoutOverview = CheckoutOverviewPage(self.driver)
-        title = self.checkoutOverview.get_title(TestData.CHECKOUT_OVERVIEW_TITLE)
-        assert title == TestData.CHECKOUT_OVERVIEW_TITLE
+        title = self.checkoutOverview.get_element_text(Locators.CHECKOUT_OVERVIEW_PAGE_HEADER)
+        assert title == TestData.CHECKOUT_OVERVIEW_HEADER
         allure.attach(self.driver.get_screenshot_as_png(),attachment_type=AttachmentType.PNG)
 
-    @pytest.mark.order()
+    @pytest.mark.order(0)
     def test_verify_click_on_finish_button(self):
         self.loginPage = LoginPage(self.driver)
         homePage = self.loginPage.do_login()
@@ -45,7 +44,5 @@ class Test_CheckoutOverviewPage(BaseTest):
         self.addToCart.do_click_checkout_button()
         self.checkInfo = CheckoutYourInfoPage(self.driver)
         self.checkInfo.do_enter_your_info()  
-        self.checkInfo.do_click(Locators.CONTINUE_BUTTON)
-        self.checkoutOverview = CheckoutOverviewPage(self.driver)
-        self.checkoutOverview.do_click_on_finish_button()
+        self.checkInfo.do_click(Locators.FINISH_BUTTON)
         allure.attach(self.driver.get_screenshot_as_png(),attachment_type=AttachmentType.JPG)  

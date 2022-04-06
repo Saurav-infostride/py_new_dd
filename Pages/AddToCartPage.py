@@ -11,8 +11,8 @@ class AddToCartPage(BasePage):
         def __init__(self, driver):
             super().__init__(driver)
 
-        def get_add_to_cart_page_title(self, title):
-            return self.get_title(title)
+        def get_add_to_cart_page_header(self):
+            return self.get_element_text(Locators.CART_PAGE_TITLE)
 
         def is_item_1_exist_in_cart(self):
             return self.is_visible(Locators.ITEM_1)

@@ -18,7 +18,6 @@ class Test_Login(BaseTest):
         self.loginPage = LoginPage(self.driver)
         title = self.loginPage.get_title()
         assert title == TestData.LOGIN_PAGE_TITLE
-        print(title)
         allure.attach(self.driver.get_screenshot_as_png(),attachment_type=AttachmentType.PNG)
 
     @pytest.mark.order(2)
