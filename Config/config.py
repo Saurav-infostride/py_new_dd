@@ -13,7 +13,7 @@ class TestData:
     '''homepage'''
     HOME_PAGE_TITLE = "Swag Labs"
     HOME_PAGE_HEADER = "PRODUCTS"
-    ITEMS_IN_CART = "3"
+    ITEMS_IN_CART = "6"
     '''cart page'''
     CART_PAGE_TITLE = "YOUR CART"
     '''Check out your Info page'''

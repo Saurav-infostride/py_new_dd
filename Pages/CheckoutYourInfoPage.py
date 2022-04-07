@@ -1,13 +1,10 @@
 import sys, os
-
 myPath = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, myPath + '/../')
 
-import time
 from Locators.Locators import Locators
 from Pages.BasePage import BasePage
 from Config.config import TestData
-from Pages import CheckoutOverviewPage
 
 class CheckoutYourInfoPage(BasePage):
 

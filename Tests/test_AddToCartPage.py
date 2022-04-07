@@ -1,4 +1,6 @@
 import sys, os
+
+from Pages.AddToCartPage import AddToCartPage
 myPath = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, myPath + '/../')
 
@@ -25,21 +27,22 @@ class Test_AddTOCartPage(BaseTest):
         else:
             pass
             
+    '''correct_1'''
     @pytest.mark.order()
     def test_verify_checkout_button(self):
         self.loginPage = LoginPage(self.driver)
         homePage = self.loginPage.do_login()
-        addToCartPage = homePage
+        addToCart = AddToCartPage(self.driver)
         homePage.do_click(Locators.CART_ICON)
-        addToCartPage.do_click(Locators.CHECKOUT_BUTTON)
+        self.addToCart = AddToCartPage(self.driver)
+        addToCart.is_items_exist_in_cart()
         allure.attach(self.driver.get_screenshot_as_png(),attachment_type=AttachmentType.PNG)
 
-    @pytest.mark.order()
+    @pytest.mark.order(1)
     def test_verify_item_in_cart(self):
         self.loginPage = LoginPage(self.driver)
         homePage = self.loginPage.do_login()
         homePage.do_shopping()
         homePage.do_click(Locators.CART_ICON)
-        addToCartPage = homePage
-        assert addToCartPage.is_visible(Locators.ITEM)
+
         allure.attach(self.driver.get_screenshot_as_png(),attachment_type=AttachmentType.PNG)

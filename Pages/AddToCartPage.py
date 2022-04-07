@@ -1,8 +1,10 @@
 import sys, os
+
 myPath = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, myPath + '/../')
 
 from Locators.Locators import Locators
+from Pages.Enums import Products
 from Pages.BasePage import BasePage
 from Pages.CheckoutYourInfoPage import CheckoutYourInfoPage
 
@@ -14,8 +16,11 @@ class AddToCartPage(BasePage):
         def get_add_to_cart_page_header(self):
             return self.get_element_text(Locators.CART_PAGE_TITLE)
 
-        def is_item_1_exist_in_cart(self):
-            return self.is_visible(Locators.ITEM_1)
+        def is_items_exist_in_cart(self):
+            for getValue in Products:
+                searchIconPresence  = self.driver.find_element_by_xpath(
+                     "//div[contains(text(),'%s')]" % str(getValue.value))
+            assert searchIconPresence.text == getValue.value
 
         def do_click_checkout_button(self):
             self.do_click(Locators.CHECKOUT_BUTTON)

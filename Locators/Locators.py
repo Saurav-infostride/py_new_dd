@@ -11,18 +11,18 @@ class Locators:
 
     '''homepage'''
     HOME_PAGE_TITLE = (By.XPATH, "//*[text()='Swag Labs']")
+    PRODUCT_SORT_CONTAINER = (By.XPATH, "//*[@class='product_sort_container']")
+    LOW_TO_HIGH = (By.XPATH, "//*[@class='product_sort_container']//following::option[@value='lohi']")
     CART_ICON = (By.XPATH, "//a[@class='shopping_cart_link']")
-    NO_OF_ITEMS_IN_CART_DISPLAYED = (By.XPATH, "//span[text()='1']")
+    NO_OF_ITEMS_IN_CART_DISPLAYED = (By.XPATH, "//span[text()='6']")
     HEADER = (By.XPATH, "//span[@class='title']")
     ADD_TO_CART_BTN = (By.XPATH, "//button[contains(text(),'Add to cart')])[%s]")
-    SAUCE_LABS_BACPACK = (By.XPATH, "//button[@id='add-to-cart-sauce-labs-backpack']")
-    SAUCE_LABS_BIKE_LIGHT = (By.XPATH, "//*[@name='add-to-cart-sauce-labs-bike-light']")
     BURGER_MENU_BUTTON = (By.XPATH, "//button[text()='Open Menu']")
     LOGOUT_BUTTON = (By.XPATH, "//a[text()='Logout']")
 
     '''cart page'''
     CART_PAGE_TITLE = (By.XPATH, "//span[text()='Your Cart']")
-    ITEM = (By.XPATH, "//*[text()='Sauce Labs Backpack']")
+    # ITEM_IN_CART = (By.XPATH, "//*[text()='Sauce Labs Backpack']")
     CHECKOUT_BUTTON = (By.XPATH, "//button[text()='Checkout']")
 
     '''CHECKOUT: YOUR INFORMATION'''

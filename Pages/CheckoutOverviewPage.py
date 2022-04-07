@@ -1,12 +1,10 @@
 import sys, os
-
 myPath = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, myPath + '/../')
 
 import time
 from Locators.Locators import Locators
 from Pages.BasePage import BasePage
-from selenium.webdriver.common.keys import Keys
 
 
 class CheckoutOverviewPage(BasePage):
@@ -21,5 +19,3 @@ class CheckoutOverviewPage(BasePage):
         print(self.driver.title)
         element= self.driver.find_element_by_xpath("//button[contains(text(),'Finish')]")
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
-        
-         

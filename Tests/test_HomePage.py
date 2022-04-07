@@ -1,7 +1,10 @@
 import sys, os
+
+from Pages.Enums import Products
 myPath = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, myPath + '/../')
 
+import time
 import pytest
 import allure 
 from allure_commons.types import AttachmentType
@@ -9,6 +12,7 @@ from Tests.test_Base import BaseTest
 from Locators.Locators import Locators
 from Config.config import TestData
 from Pages.LoginPage import LoginPage
+from Pages.Enums import Products
 
 class Test_Home(BaseTest):
     
@@ -37,12 +41,16 @@ class Test_Home(BaseTest):
         allure.attach(self.driver.get_screenshot_as_png(),attachment_type=AttachmentType.JPG)
 
     @pytest.mark.order()
+    def test_verify_product_sort_container(self):
+        self.loginPage = LoginPage(self.driver)
+        homePage = self.loginPage.do_login()
+        homePage.product_sort_container()
+
+    @pytest.mark.order()
     def test_verify_shopping(self):
         self.loginPage = LoginPage(self.driver)
         homePage = self.loginPage.do_login()
         homePage.do_shopping()
-        items_in_cart = homePage.get_element_text(Locators.NO_OF_ITEMS_IN_CART_DISPLAYED)
-        assert items_in_cart == TestData.ITEMS_IN_CART
         allure.attach(self.driver.get_screenshot_as_png(),attachment_type=AttachmentType.PNG)
 
     @pytest.mark.order()
