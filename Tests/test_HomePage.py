@@ -1,6 +1,6 @@
 import sys, os
+from turtle import home
 
-from Pages.Enums import Products
 myPath = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, myPath + '/../')
 
@@ -12,7 +12,7 @@ from Tests.test_Base import BaseTest
 from Locators.Locators import Locators
 from Config.config import TestData
 from Pages.LoginPage import LoginPage
-from Pages.Enums import Products
+from Locators.EnumsPackage.Enums import Sort_Productss
 
 class Test_Home(BaseTest):
     
@@ -45,6 +45,10 @@ class Test_Home(BaseTest):
         self.loginPage = LoginPage(self.driver)
         homePage = self.loginPage.do_login()
         homePage.product_sort_container()
+        for getValue in Sort_Productss:
+            sortingNames  = self.driver.find_element_by_xpath(
+                     "//*[@class='product_sort_container']//option[contains(text(),'%s')]" % str(getValue.value)) 
+            assert sortingNames.text == getValue.value
 
     @pytest.mark.order()
     def test_verify_shopping(self):
@@ -52,6 +56,15 @@ class Test_Home(BaseTest):
         homePage = self.loginPage.do_login()
         homePage.do_shopping()
         allure.attach(self.driver.get_screenshot_as_png(),attachment_type=AttachmentType.PNG)
+
+    @pytest.mark.order()
+    def test_verify_sorting_Zto_A(self):
+        self.loginPage = LoginPage(self.driver)
+        homePage = self.loginPage.do_login()
+        homePage.product_sort_container()
+        homePage.sort_product_High_to_Low()
+        allure.attach(self.driver.get_screenshot_as_png(),attachment_type=AttachmentType.PNG)
+
 
     @pytest.mark.order()
     def test_verify_logout_into_app(self):

@@ -18,19 +18,18 @@ from Config.config import TestData
 class Test_CheckoutOverviewPage(BaseTest):
 
     @pytest.mark.order(1)
-    def test_verify_checkout_overview_page_title(self):
+    def test_verify_checkout_overview_page_header(self):
         self.loginPage = LoginPage(self.driver)
         homePage = self.loginPage.do_login()
         self.homePage = HomePage(self.driver)
         homePage.do_shopping()
-        homePage.click_on_cart_icon()
         self.addToCart = AddToCartPage(self.driver)
         self.addToCart.do_click_checkout_button()
         self.checkInfo = CheckoutYourInfoPage(self.driver)
         self.checkInfo.do_enter_your_info()  
         self.checkoutOverview = CheckoutOverviewPage(self.driver)
-        title = self.checkoutOverview.get_element_text(Locators.CHECKOUT_OVERVIEW_PAGE_HEADER)
-        assert title == TestData.CHECKOUT_OVERVIEW_HEADER
+        checkout_overview_page_header = self.checkoutOverview.get_element_text(Locators.CHECKOUT_OVERVIEW_PAGE_HEADER)
+        assert checkout_overview_page_header == TestData.CHECKOUT_OVERVIEW_HEADER
         allure.attach(self.driver.get_screenshot_as_png(),attachment_type=AttachmentType.PNG)
 
     @pytest.mark.order(0)
@@ -39,7 +38,6 @@ class Test_CheckoutOverviewPage(BaseTest):
         homePage = self.loginPage.do_login()
         self.homePage = HomePage(self.driver)
         homePage.do_shopping()
-        homePage.click_on_cart_icon()
         self.addToCart = AddToCartPage(self.driver)
         self.addToCart.do_click_checkout_button()
         self.checkInfo = CheckoutYourInfoPage(self.driver)
